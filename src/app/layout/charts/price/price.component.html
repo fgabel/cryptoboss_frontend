@@ -1,0 +1,112 @@
+<div class="row">
+    <div class="col-md-5">
+
+
+        <div class="card-small">
+
+            <div class="row">
+                <div class="col-sm-2"><img src={{img}}></div>
+                <div class="col-sm-9">
+
+                    <div class="linkandadd"><a
+                        href="https://www.bitcoin.org/" class="mainlink"><h2 class="logo"> {{header}}</h2></a>
+                    </div>
+
+
+                    {{teaser}}
+                </div>
+
+            </div>
+
+
+            <div class="btn-group btn-light ">
+
+
+                <a href="https://bitcoin.org/de/">
+                    <button class="btn btn-light"><img class="btnimg" src="./assets/images/web.png" alt=""/>website
+                    </button>
+                </a>
+
+
+                <a href="https://www.reddit.com/r/Bitcoin/">
+                    <button class="btn btn-light"><img class="btnimg" src="./assets/images/reddit.png" alt=""/>reddit
+                    </button>
+                </a>
+
+
+                <a href="https://bitcoin.org/bitcoin.pdf">
+                    <button class="btn btn-light"><img class="btnimg" src="./assets/images/whitepaper.png" alt=""/>whitepaper
+                    </button>
+                </a>
+
+
+                <a href="https://en.wikipedia.org/wiki/Bitcoin">
+                    <button class="btn btn-light"><img class="btnimg" src="./assets/images/wiki.jpg" alt=""/> wikipedia
+                    </button>
+                </a>
+
+                <!--[ngClass]="subbed ? 'navbar-toggler-icon fa fa-check fas-2x' : 'navbar-toggler-icon fa fa-plus fa-2x'"-->
+                <button class="btn btn-light leftbound"><i (click)="onClick()"><br>watch<br>list</i></button>
+            </div>
+
+        </div>
+
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+  Tooltip with HTML
+</button>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Change</th>
+                <th scope="col">Rank</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Price</th>
+                <td [ngClass]="{'positive' : color_of_change == true, 'negative' : color_of_change == false}">
+                    {{tabledata | number: '1.2-2'}} $
+                </td>
+                <td>Social</td>
+                <td>Dev</td>
+            </tr>
+            <tr>
+                <th scope="row" data-original-title="888" data-container="body" data-toggle="tooltip" data-placement="bottom" title="The volume of {{curr}} in the last 24 hours.">Volume</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row" scope="row" data-container="body" data-toggle="tooltip" data-placement="bottom" title="A measure of social activity of {{curr}} including data from Reddit, Twitter and Telegram.">Social</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            <tr>
+                <th scope="row">Dev</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+            </tbody>
+        </table>
+        <!--<button class="btn btn-outline-primary" (click)="getHeight()">getHeight()</button>-->
+
+        <!--<button class="btn btn-outline-primary" (click)="getDom()">getDom()</button>-->
+
+        <!--<button class="btn btn-outline-primary" (click)="getWidth()">Update()</button>-->
+
+        <!--<button class="btn btn-outline-danger" (click)="clear()">clear()</button>-->
+
+    </div>
+
+
+    <div class="col-md-7">
+        <div echarts [options]="options" (chartInit)="onChartInit1($event)" [loading]="isLoading" class="demo-chart"></div>
+    </div>
+</div>
+
+
+
+

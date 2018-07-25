@@ -1,0 +1,71 @@
+$topnav-background-color: rgb(0, 0, 0);
+:host {
+    .navbar {
+        background-color: $topnav-background-color;
+        padding-top:1px !important;
+        padding-bottom:1px !important;
+        .navbar-brand {
+            color: #fff;
+            padding-top:1px !important;
+        }
+        .nav-item > a {
+            z-index: 1;
+
+            color: #999;
+            &:hover {
+                color: #fff;
+
+            }
+            .imgB1 {
+    display: none;
+
+
+}
+/*            &:hover .imgB1{
+                display: block;
+background-position:bottom right;
+            }*/
+
+
+            .imgB1:hover {
+    width: 11px;
+}
+        }
+
+        .nav-link {
+            border-radius: 1px;
+            background-color: rgba(234, 255, 240, 0.35);
+            border-color: rgba(234, 255, 240, 0.35);
+            font-size: 15px;
+            font-size: 15px;
+            font-color: #000;
+
+        }
+
+    }
+
+    .messages {
+        width: 300px;
+        .media {
+            border-bottom: 1px solid #ddd;
+            padding: 5px 10px;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        .media-body {
+            h5 {
+                font-size: 13px;
+                font-weight: 600;
+            }
+            .small {
+                margin: 0;
+            }
+            .last {
+                font-size: 12px;
+                margin: 0;
+            }
+        }
+    }
+}
+

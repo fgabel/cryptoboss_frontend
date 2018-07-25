@@ -1,0 +1,12 @@
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+.grow img:hover {
+   -webkit-filter: invert(1);
+   filter: invert(1);
+    transition: all 1s linear;
+}
+
+
+

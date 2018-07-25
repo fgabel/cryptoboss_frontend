@@ -1,0 +1,16 @@
+{
+  "name": "rest",
+  "version": "1.0.0",
+  "description": "rest api test",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mysql": "^2.15.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Frank Gabel",
+  "license": "ISC"
+}

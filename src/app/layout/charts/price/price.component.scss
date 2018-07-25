@@ -1,0 +1,71 @@
+.card-small {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-style: ridge;
+
+    border-radius: 3px;
+    padding: 12px;
+    box-sizing: padding-box;
+    position: relative;
+    border-right: 1px solid #1fa2ed;
+    border-bottom: 1px solid #1fa2ed;
+    border-left: 1px solid #1fa2ed;
+    margin-bottom: 15px;
+    .leftbound {
+        font-size: 7px;
+        text-align: left;
+        color: red;
+        padding: 1px 1px;
+
+    }
+}
+
+/* On mouse-over, add a deeper shadow */
+.card-small:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+h1.logo {
+    font-family: "Euphemia UCAS";
+    font-size: 50px !important;
+    font-weight: normal;
+    color: #222222;
+    text-indent: 1em
+}
+
+img {
+    width: 100%;
+    height: auto;
+    /* Magic! */
+    max-width: 10vw;
+}
+
+.card-small#a:hover {
+    background-color: #ce0606;
+    text-decoration: none;
+}
+
+.col-sm-9 {
+    text-align: center
+}
+
+.btnimg {
+    width: 10%;
+
+}
+
+a.mainlink:hover {
+    text-decoration: none;
+    filter: brightness(120%);
+}
+
+.positive {
+    font-size: 20px;
+    color: rgb(0, 255, 0);
+}
+
+.negative {
+    font-size: 20px;
+    color: rgb(255, 0, 0);
+}

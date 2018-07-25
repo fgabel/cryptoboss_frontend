@@ -1,0 +1,16 @@
+<!-- Default dropright button -->
+<div class="btn-group mr-3">
+  <button type="button" (click)="onUpdateClick()" class="btn btn-outline-success">Update</button>
+  <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button class="btn btn-outline-primary" ngbDropdownToggle>Exchange</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+      <button class="dropdown-item">One</button>
+      <button class="dropdown-item">Two</button>
+      <button class="dropdown-item">Four!</button>
+    </div>
+  </div>
+</div>
+
+<div echarts [options]="options" (chartInit)="onChartInit3($event)" [loading]="isLoading"  class="demo-chart"></div>
+
+

@@ -1,0 +1,141 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <img src="../../../../assets/images/cryptoboss.png" style="height: auto; max-width: 100%;width: auto\9; padding-left:35px">
+    <div class="list-group">
+<ng-template #rt let-r="result" let-t="term">
+<button [routerLink]=url [routerLinkActive]="['router-link-active']" type="button" class="btn btn-light" (click)="onClick(r, string_without_brackets_(r))">+</button>
+
+  <img [src]="'../../../../assets/images/' + string_without_brackets_(r) +'.png'" width="16">
+  {{r}}
+
+
+</ng-template>
+
+
+        <input id="typeahead-basic" type="text" class="form-control" placeholder="Search" [(ngModel)]="model" onfocus="this.value=''" [resultTemplate]="rt"
+               [ngbTypeahead]="search" (selectItem)="itemSelected($event)"/>
+        <hr>
+
+        <div class="penner">
+
+            <!--<li *ngFor="let ticker_ of tickerbar" class="nav-item d-none d-xl-block">-->
+            <!--<a-->
+            <!--[routerLink]="[]" [routerLinkActive]="['router-link-active']"-->
+            <!--class="nav-link btn mt-0" role="button"-->
+            <!--style="padding: .375rem 1rem !important;border-color: #FFF; z-index: 1"-->
+            <!--&gt;-->
+
+
+            <!--<div class="left-align">{{ticker_[0]}}</div>-->
+            <!--<div class="right-align">-->
+            <!--<a-->
+            <!--[routerLink]="['/charts/' + ticker_[1]]" [routerLinkActive]="['router-link-active']"-->
+            <!--class="nav-link btn mt-0" role="button"-->
+            <!--style="padding: .375rem 1rem !important;border-color: #FFF; z-index: 1"-->
+            <!--&gt;-->
+            <!--<button class="btn-xs btn-warning btn-circle"><i (click)="remover(ticker_[1])"-->
+
+            <!--style="color:green;font-size: 5px;z-index: 5"></i>-->
+            <!--</button>-->
+            <!--</a>-->
+            <!--<img class="btnimg" [src]="['./assets/charts/' + ticker_[1]+ '.png']" alt=""/>-->
+            <!--<div style="text-align:right">{{tickerdata[ticker_[1] + 'USD'] | number: '1.2-2'}} <i-->
+            <!--class="fa fa-dollar"></i>-->
+            <!--</div>-->
+            <!--</div>-->
+
+
+            <!--&lt;!&ndash;<img class="imgB1" src="https://placehold.it/10">&ndash;&gt;-->
+
+            <!--</a>-->
+            <!--&lt;!&ndash;<button class="btn-xs btn-warning btn-circle" (click)="remover(ticker_[1])"><i&ndash;&gt;-->
+            <!--&lt;!&ndash;class="navbar-toggler-icon far fa-minus-square"&ndash;&gt;-->
+            <!--&lt;!&ndash;style="color:green;font-size: 5px;z-index: 5"></i></button>&ndash;&gt;-->
+            <!--</li> &nbsp;-->
+            <!--list2>-->
+            <div class="ngx-dnd-container" ngxDroppable>
+            <li *ngFor="let ticker_ of tickerbar" class="nav-item d-none d-xl-block" ngxDraggable>
+                <a
+                    [routerLink]="['/charts/' + ticker_[1]]" [routerLinkActive]="['router-link-active']"
+                    class="nav-link btn mt-0" role="button"
+                    style="padding: .375rem 1rem !important;border-color: #FFF; z-index: 1"
+                >
+                    <div class="row">
+                        <div class="col-6 col-sm-6 text-left">{{ticker_[0]}}</div>
+                        <div class="col-6 col-sm-6 text-right">{{tickerdata[ticker_[1] + 'USD'] | number: '1.2-2'}} <i
+                            class="fa fa-dollar"></i></div>
+
+                        <!-- Force next columns to break to new line at md breakpoint and up -->
+                        <div class="w-100 d-none d-md-block"></div>
+
+                        <div class="col-6 col-sm-8"><img class="btnimg"
+                                                         [src]="['./assets/charts/' + ticker_[1]+ '.png']" alt=""/>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <a href="javascript:void(0)" class="btn btn-light btn-sm" role="button"
+                               (click)="remover(ticker_[1])" style = "clear: left;">remove</a>
+                            <a [routerLink]="['/charts/' + ticker_[1]]" class="btn btn-light btn-sm" role="button"
+                               (click)="remover(ticker_[1])" >hurensohn</a>
+                            <a [routerLink]="['/charts/' + ticker_[1]]" class="btn btn-light btn-sm" role="button"
+                               (click)="remover(ticker_[1])" >BUY ON CHANGELLY</a>
+                        </div>
+                    </div>
+
+
+                    <!--<img class="imgB1" src="https://placehold.it/10">-->
+
+                </a>
+                <!--<button class="btn-xs btn-warning btn-circle" (click)="remover(ticker_[1])"><i-->
+                <!--class="navbar-toggler-icon far fa-minus-square"-->
+                <!--style="color:green;font-size: 5px;z-index: 5"></i></button>-->
+            </li> &nbsp;
+            </div>
+        </div>
+
+
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'Dashboard' | translate }}
+        </a>
+        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;{{ 'Charts' | translate }}
+        </a>
+        <!--<a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+        <!--<i class="fa fa-fw fa-table"></i>&nbsp;{{ 'Tables' | translate }}-->
+        <!--</a>-->
+        <!--<a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+        <!--<i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'Forms' | translate }}-->
+        <!--</a>-->
+        <!--<a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+        <!--<i class="fa fa-fw fa-desktop"></i>&nbsp;{{ 'Bootstrap Element' | translate }}-->
+        <!--</a>-->
+        <!--<a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+        <!--<i class="fa fa-fw fa-wrench"></i>&nbsp;{{ 'Bootstrap Grid' | translate }}-->
+        <!--</a>-->
+        <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;{{ 'Component' | translate }}
+        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('pages')">
+                <span><i class="fa fa-plus"></i>&nbsp; {{ 'Menu' | translate }}</span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'pages'">
+                <ul class="submenu">
+                    <li>
+                        <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)"><span>{{ 'Submenu' | translate }}</span></a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file-o"></i>&nbsp;{{ 'Blank Page' | translate }}
+        </a>
+
+
+
+    </div>
+</nav>

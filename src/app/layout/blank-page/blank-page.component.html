@@ -1,0 +1,47 @@
+
+<div *ngIf="isDataLoaded">
+    <ngx-datatable
+        class="bootstrap"
+        style="top: 5px; height: 900px;"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="0"
+        [rowHeight]="45"
+        [scrollbarV]="false"
+        [scrollbarH]="true"
+        [rows]="rows"
+        (page)="onPage($event)">
+
+         Row Detail Template
+        <ngx-datatable-row-detail [rowHeight]="100" #myDetailRow (toggle)="onDetailToggle($event)">
+            <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
+                <div style="padding-left:35px;">
+                    <div><strong>Address</strong></div>
+                    <div>{{row.address.city}}, {{row.address.state}}</div>
+                </div>
+            </ng-template>
+        </ngx-datatable-row-detail>
+
+        <ngx-datatable-column *ngFor="let col of columns" [prop]="col.prop" [name]="col.name">
+            <ng-template *ngIf="col.prop=='time'" let-value="value" ngx-datatable-cell-template>
+                {{value | date: 'dd.MM hh:mm:ss'}}
+            </ng-template>
+            <ng-template *ngIf="col.prop=='name'" let-value="value" ngx-datatable-cell-template>
+                <div class="grow pic">
+                    <img src="{{icons.concat(icondata.data[value].icon)}}" width="8%" height="8%">
+
+
+                                    <a
+                    [routerLink]="['/charts/' + value]" [routerLinkActive]="['router-link-active']"
+
+                >
+                    {{icondata.data[value].name}}
+                </a>
+                </div>
+
+            </ng-template>
+        </ngx-datatable-column>
+
+    </ngx-datatable>
+</div>
+

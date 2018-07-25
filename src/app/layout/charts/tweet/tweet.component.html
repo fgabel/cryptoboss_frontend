@@ -1,0 +1,30 @@
+<div class="card-header">
+  <img [src]="tweet.profile_image_url" class="avatar" width	= 5%/> {{tweet.user}} (@{{tweet.screen_name}})
+  <span *ngIf="retweet" class="retweeted"><clr-icon shape="sync"></clr-icon> Retweeted by {{tweet.user_retweeter}} (@{{tweet.screen_name_retweeter}})</span>
+
+</div>
+<div class="card-block">
+    <!--<&#45;&#45; *ngIf="hasPhoto(tweet)">&#45;&#45;-->
+  <!--<div class="card-img">-->
+      <!--<img [src]="tweet.profile_image_url"/>-->
+  <!--</div>-->
+  <p class="card-text" [innerHTML]="tweet.text"></p>
+</div>
+<div class="card-footer">
+    {{tweet.time | amTimeAgo}}
+    <clr-icon shape="minus"></clr-icon>
+    {{tweet.time | date:'medium'}}
+
+</div>
+
+
+
+<!--<clr-modal [(clrModalOpen)]="media" *ngIf="tweet.entities.media" clrModalSize="lg">-->
+  <!--<h3 class="modal-title"><img [src]="tweet.profile_image_url" class="avatar" /> {{tweet.user}} (@{{tweet.screen_name}})-->
+    <!--<span *ngIf="retweet" class="retweeted"><clr-icon shape="sync"></clr-icon> Retweeted by {{tweet.user_retweeter}}</span></h3>-->
+    <!--<div class="modal-body">-->
+      <!--<img [src]="tweet.media_url" />-->
+    <!--</div>-->
+    <!--<div class="modal-footer" [innerHTML]="tweet.text"></div>-->
+<!--</clr-modal>-->
+
